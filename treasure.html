@@ -1,128 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Treasure hunt</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+    <title>Treasure hunt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
 
 </head>
+
 <body>
-<div class="container" style="text-align:center">
-    <div class="container-fluid p-5 bg-info text-black text-center">
-        <h1>Treasure Hunt By Soumya Konda</h1>
-    </div><br>
-    <div class="d-flex justify-content-center p-2 bg-secondary text-white">  
-        <div class="p-2 bg-info flex-fill">Click on the boxs to search for treasure</div>
-        <div class="p-2 bg-warning flex-fill" id="boxes">Number of boxes checked is zero.</div>
-        <div class="p-2 bg-primary flex-fill" id="score">Score is unknown.</div>
-        <div class="p-2 bg-danger flex-fill" id="map">Help report</div>
+    <div class="container" style="text-align:center">
+        <div class="container-fluid p-5 bg-info text-black text-center">
+            <h1>Treasure Hunt By Soumya Konda</h1>
+        </div><br>
+        <div class="d-flex justify-content-center p-2 bg-secondary text-white">
+            <div class="p-2 bg-info flex-fill">Click on the chests to search for treasure</div>
+            <div class="p-2 bg-warning flex-fill" id="chests">Number of chests checked is zero</div>
+            <div class="p-2 bg-primary flex-fill" id="score">Score is unknown</div>
+            <div class="p-2 bg-danger flex-fill" id="help">Help report</div>
+        </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(0)" id="treasurebox_0" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(1)" id="treasurebox_1" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(2)" id="treasurebox_2" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(3)" id="treasurebox_3" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(4)" id="treasurebox_4" width="100"
+                    height="100">
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasuremap.jpg" alt="treasure map" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(5)" id="treasurebox_5" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(6)" id="treasurebox_6" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(7)" id="treasurebox_7" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(8)" id="treasurebox_8" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(9)" id="treasurebox_9" width="100"
+                    height="100">
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
-        </div>
-        <div class="col-sm">
-            <img src="treasurebox.jpg" alt="treasurebox" width="100" height="100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(10)" id="treasurebox_10" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(11)" id="treasurebox_11" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasuremap.jpg" alt="treasure map" id="treasuremap" onclick="help()" id="treasurebox_12"
+                    width="100" height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(13)" id="treasurebox_13" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(14)" id="treasurebox_14" width="100"
+                    height="100">
+            </div>
         </div>
     </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(15)" id="treasurebox_15" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(16)" id="treasurebox_16" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(17)" id="treasurebox_17" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(18)" id="treasurebox_18" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(19)" id="treasurebox_19" width="100"
+                    height="100">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(20)" id="treasurebox_20" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(21)" id="treasurebox_21" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(22)" id="treasurebox_22" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(23)" id="treasurebox_23" width="100"
+                    height="100">
+            </div>
+            <div class="col-sm">
+                <img src="treasurebox.jpg" alt="treasurebox" onclick="check(24)" id="treasurebox_24" width="100"
+                    height="100">
+            </div>
+        </div>
+    </div>
 
-</div>
-<br>
+    </div>
+    <br>
 </body>
+
 </html>
+<script>
+    var ids = ["treasurebox_0", "treasurebox_1", "treasurebox_2", "treasurebox_3",
+        "treasurebox_4", "treasurebox_5", "treasurebox_6", "treasurebox_7", "treasurebox_8",
+        "treasurebox_9", "treasurebox_10", "treasurebox_11", "treasurebox_12", "treasurebox_13",
+        "treasurebox_14", "treasurebox_15", "treasurebox_16", "treasurebox_17", "treasurebox_18",
+        "treasurebox_19", "treasurebox_20", "treasurebox_21", "treasurebox_22", "treasurebox_23", "treasurebox_24"];
+    var chestCount = 0;
+    var score = 0;
+    var lastCheck = 12;
+    var treasureLocation = 18;
+    function check(position) {
+        if (position == 18) {
+            document.getElementById(ids[position]).src = "treasurebox-withgold.jpg";
+        }
+        else {
+            document.getElementById(ids[position]).src = "empty-treasure.jpg";
+        }
+        chestCount += 1
+        score += 1
+        document.getElementById("chests").innerHTML = "Number of chests checked is " + chestCount;
+        document.getElementById("score").innerHTML = "Score is " + score
+        lastCheck = position;
+    }
+    function help() {
+        column_lc = parseInt(lastCheck % 5);
+        row_lc = parseInt(lastCheck / 5);
+        row_tl = parseInt(treasureLocation / 5);
+        column_tl = parseInt(treasureLocation % 5);
+        score += 2
+        document.getElementById("score").innerHTML = "Score is " + score;
+        if (row_lc == row_tl) {
+            if (column_lc < row_tl) {
+                document.getElementById("help").innerHTML = "Right"
+            } else if (column_lc > row_tl) {
+                document.getElementById("help").innerHTML = "Left"
+            } else {
+                document.getElementById("help").innerHTML = "Sorry, no help available"
+            }
+        } else if (column_lc == column_tl) {
+            if (row_lc < row_tl) {
+                document.getElementById("help").innerHTML = "Down"
+            } else if (row_lc > row_tl) {
+                document.getElementById("help").innerHTML = "Up"
+            } else {
+                document.getElementById("help").innerHTML = "Sorry, no help available"
+            }
+        } else {
+            document.getElementById("help").innerHTML = "Sorry, no help available"
+        }
+    }
+    function startTime() {
+
+    }
+    function get() {
+
+    }
+    function spin() {
+
+    }
+</script>
