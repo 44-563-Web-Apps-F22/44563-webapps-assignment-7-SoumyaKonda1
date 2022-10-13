@@ -37,7 +37,8 @@
       console.log(myTime);
     }
     function startTime() {
-      for (let i = 0; i < 4; i++) {
+       var countdown = Math.floor(Math.random() * 9) + 2
+      for (let i = 0; i < countdown; i++) {
         setTimeout(() => {
           document.getElementById("countdown").innerHTML = i
         }, ((3 - i) * 1000));

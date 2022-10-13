@@ -57,13 +57,10 @@
 		<div class="container text-center">
 			<button class="btn btn-outline-primary" type="submit" onclick="makeNewDiv()">Add Value</button>
 			<button class="btn btn-outline-info" type="submit" onclick="get()">Get</button>
-			<button class="btn btn-outline-warning type=" submit" onclick="spin()">Spin</button>
+			<button class="btn btn-outline-warning" type="submit" onclick="spin()">Spin</button>
+			<button class="btn btn-outline-success" type="submit" onclick="swap()">Swap</button>
 		</div>
-
-
 	</div>
-
-
 </body>
 <script>
 	function makeNewDiv() {
@@ -90,6 +87,20 @@
 			cyclerItems[cyclerItems.length - 1].remove()
 			let container = document.getElementById("target")
 			container.insertBefore(removedItem, container.firstChild)
+		}
+	}
+
+	function swap() {
+		let cyclerList = document.getElementsByClassName("cycler")
+		let container = document.getElementById("target")
+		let a = Math.floor(Math.random() * cyclerList.length)
+		let b = Math.floor(Math.random() * cyclerList.length)
+		let firstInnerText = document.getElementsByClassName("cycler")[a]
+		let secondInnerText = document.getElementsByClassName("cycler")[b]
+		if (cyclerList.length > 1) {
+			let temp = firstInnerText.innerHTML
+			firstInnerText.innerHTML = secondInnerText.innerHTML
+			secondInnerText.innerHTML = temp
 		}
 	}
 </script>
