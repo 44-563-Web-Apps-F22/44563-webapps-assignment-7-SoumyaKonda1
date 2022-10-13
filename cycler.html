@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: rgb(23 162 184 / 29%);
+		}
+
+		.flex-container>div {
+			/*div children of the flex container*/
+			background-color: #f1f1f1;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: rgba(235, 218, 63, 0.36);
+			}
+		}
+	</style>
+	<title> builds a cycler </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+	<div class="container text-center">
+		<div class="container-fluid p-5 bg-info text-black text-center">
+			<h1>Soumya Konda By builds a cycler</h1>
+		</div><br>
+		<div class="flex-container" id="target">
+			<div class="cycler">Row Item 1</div>
+			<div class="cycler">Row Item 2</div>
+			<div class="cycler">Row Item 3</div>
+		</div><br>
+		<label for="inputElement">Enter some text : <br></label>
+		<input class="form-control" type="text" name="input" id="inputElement" value="">
+		<br>
+		<p class="message">
+			Press the <b>Add Value</b> button to create an new element of type div and then add it to the container.<br>
+			Press the <b>Get</b> button to remove element from div container.<br>
+			Press the <b>Spin</b> button to Spin the elements in the div container.
+		</p>
+		<div class="container text-center">
+			<button class="btn btn-outline-primary" type="submit" onclick="makeNewDiv()">Add Value</button>
+			<button class="btn btn-outline-info" type="submit" onclick="get()">Get</button>
+			<button class="btn btn-outline-warning type=" submit" onclick="spin()">Spin</button>
+		</div>
+
+
+	</div>
+
+
+</body>
+<script>
+	function makeNewDiv() {
+		let element = document.createElement("div")
+		let value = document.getElementById("inputElement").value
+
+		element.innerHTML = value
+		element.className = "cycler"
+
+		let container = document.getElementById("target")
+		container.appendChild(element)
+	}
+	function get() {
+		let cyclerItems = document.getElementsByClassName("cycler")
+		if (cyclerItems.length > 0) {
+			cyclerItems[cyclerItems.length - 1].remove()
+		}
+	}
+
+	function spin() {
+		let cyclerItems = document.getElementsByClassName("cycler")
+		if (cyclerItems.length > 1) {
+			removedItem = cyclerItems[cyclerItems.length - 1]
+			cyclerItems[cyclerItems.length - 1].remove()
+			let container = document.getElementById("target")
+			container.insertBefore(removedItem, container.firstChild)
+		}
+	}
+</script>
+
+</html>
